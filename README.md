@@ -1,26 +1,41 @@
 # Instructions
 
+##### Development:
 
+BDD must be followed (RED-GREEN). Thus you need to:
+ 
+1. Write a test based on CoS of the story to implement.
+2. Execute the test and make it fail (RED)
+3. Code to make the test succeed
+4. Execute the test and make it pass (GREEN)
 
-# Run
+##### Deployment to production:
+
+Any deployment to production must be approved by the PO.
+PO will approve a deployment of a story to production only when the CoS of that story is met and verified by at least a GREEN test.. 
+ 
+## Set up
 
 1. Fork repository https://github.com/lucasledesma/agile-kata
 
 2. Import project in intellij as maven project
 
-3. Build the project
+## Build
+
+1. Build the project
    - From intellij:
      - using maven
    - From command line:
      - mvn package
+## Run
 
-4. Run the server
+1. Run the server
    - From intellij
      - Main class = kata.server.HttpServer
    - From command line
      - java -jar target/kata-server-1.0-SNAPSHOT-jar-with-dependencies.jar
 
-# Test
+## Test
 
 1. Execute test cases
    - From intellij:
@@ -28,7 +43,7 @@
    - From command line:
      - mvn test
 
-# Deploy to production
+## Deploy to production
 
 1. Create production app in the cloud (must have heroku client installed)
 
@@ -38,9 +53,6 @@
 
    - heroku create
 
-2. Deploy to production
-   - git push heroku master
+2. Deploy to production (Only when approved by the PO!)
+   - git push heroku master 
 
-# Resources
-
-* [Sparkjava](http://sparkjava.com/documentation.html): A Sinatra like HTTP server
