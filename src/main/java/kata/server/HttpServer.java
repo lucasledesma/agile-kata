@@ -43,7 +43,7 @@ public class HttpServer {
 
         get("/ping", (req, res) -> {
                     logger.info("Incoming request on '/ping'");
-                    return "pong";
+                    return "";
                 }
         );
 
