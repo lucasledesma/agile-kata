@@ -1,17 +1,14 @@
 # Run
 
-1) Fork repository
-https://github.com/lucasledesma/agile-kata
+1) Fork repository https://github.com/lucasledesma/agile-kata
 
-2)
-Import project in intellij as maven project
+2) Import project in intellij as maven project
 
-3)
-Build the project
-From intellij:
+3) Build the project
+3.1.) From intellij:
 - using maven
 
-From command line:
+3.2.) From command line:
 - mvn package
 
 4)
