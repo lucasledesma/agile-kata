@@ -41,7 +41,7 @@ public class HttpServerTest {
     }
 
     protected String post(String path, String body) throws IOException {
-        URL url = new URL(path);
+        URL url = new URL(resource.baseURL() + path);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setDoOutput(true);
         connection.setDoInput(true);

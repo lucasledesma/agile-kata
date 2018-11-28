@@ -54,5 +54,29 @@ PO will approve a deployment of a story to production only when the CoS of that 
    - heroku create
 
 2. Deploy to production (Only when approved by the PO!)
-   - git push heroku master 
+   - git push heroku master  
+   
+3. Seeing the log in production
+   - heroku logs --tail
+
+## Requests
+
+The central server will start sending orders to your local client like this:
+
+    POST /order HTTP/1.1
+    {
+        "prices": [65.6,27.26,32.68],
+        "quantities": [6,8,10],
+        "country": "IE",
+        "reduction":"STANDARD"
+    }
+
+
+The server will send you feedback based on what you have responded. So check if your local HTTP server already handles POST /feedback and, if not, implement it, otherwise you will not be able to figure out what is going on with your responses. Here is an example of a feedback the central server can send to you:
+
+    POST /feedback HTTP/1.1
+    {
+        "type": "ERROR",
+        "content": "The field \"total\" in the response is missing."
+    }
 

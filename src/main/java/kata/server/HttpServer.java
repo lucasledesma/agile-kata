@@ -43,30 +43,8 @@ public class HttpServer {
 
         get("/ping", (req, res) -> {
                     logger.info("Incoming request on '/ping'");
-                    return "";
+                    return "pong";
                 }
         );
-
-        post("/feedback", (req, res) -> {
-            JsonObject body = gson.fromJson(req.body(), JsonObject.class);
-            String feedbackType = body.get("type").getAsString();
-            String feedbackContent = body.get("content").getAsString();
-
-            if ("ERROR".equals(feedbackType)) {
-                logger.error(feedbackContent);
-            } else {
-                logger.info(feedbackContent);
-            }
-
-            return "";
-        }, asJson);
-
-        post("/order", (req, res) -> {
-            JsonObject body = gson.fromJson(req.body(), JsonObject.class);
-            logger.info("Incoming request on '/order': {}", body.entrySet());
-            return "";
-        }, asJson);
-
     }
-
 }
